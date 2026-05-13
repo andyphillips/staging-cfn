@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Communities for Nature | Partnerships that Work</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --teal: #22a7b0;
+            --dark-teal: #1a8a91;
+            --text-gray: #4a4a4a;
+            --light-gray: #f9f9f9;
+            --border-gray: #e0e0e0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-gray);
+            background-color: #fff;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: #1a1a1a;
+        }
+
+        .highlight {
+            color: var(--teal);
+            font-style: italic;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: #fff;
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 24px;
+            color: var(--teal);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-gray);
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        .btn-donate {
+            background: var(--teal);
+            color: #fff !important;
+            padding: 8px 20px;
+            border-radius: 4px;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            padding: 80px 0;
+            gap: 50px;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 500px;
+            background-color: #ddd;
+            /* Referencing the local file provided */
+            background-image: url('Homepage.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            margin-bottom: 30px;
+            font-size: 18px;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 4px;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: var(--teal);
+            color: white;
+        }
+
+        .btn-outline {
+            border: 1px solid var(--teal);
+            color: var(--teal);
+        }
+
+        .stats {
+            display: flex;
+            gap: 40px;
+        }
+
+        .stat-item h4 {
+            font-size: 28px;
+            color: var(--teal);
+        }
+
+        .stat-item span {
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+
+        /* Grid Sections */
+        .section-header {
+            margin: 80px 0 40px;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .card {
+            border: 1px solid var(--border-gray);
+            padding: 40px;
+            text-align: left;
+        }
+
+        .card h3 {
+            margin: 20px 0;
+            font-size: 22px;
+        }
+
+        .circle-placeholder {
+            width: 100px;
+            height: 100px;
+            background: #e0e0e0;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        /* Footer Styling */
+        footer {
+            background: #fff;
+            padding: 60px 0;
+            border-top: 1px solid var(--border-gray);
+            margin-top: 100px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        .footer-col h5 {
+            font-size: 12px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            color: var(--teal);
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .hero, .card-grid, .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <nav>
+            <div class="logo">CW</div>
+            <div class="nav-links">
+                <a href="#">About Us</a>
+                <a href="#">Work & Impact</a>
+                <a href="#">Get Involved</a>
+                <a href="#">Stories & Insights</a>
+                <a href="#" class="btn-donate">Donate</a>
+            </div>
+        </nav>
+
+        <section class="hero">
+            <div class="hero-image"></div>
+            <div class="hero-content">
+                <h1>Partnerships that <span class="highlight">work.</span><br>Stewardship that lasts.</h1>
+                <p>Communities for Nature delivers community-led conservation through carefully curated partnerships that protect ecosystems and strengthen livelihoods.</p>
+                <div class="btn-group">
+                    <a href="YOUR_LINK_HERE" class="btn btn-primary">PARTNER WITH US</a>
+                    <a href="#" class="btn btn-outline">EXPLORE OUR WORK</a>
+                </div>
+                <div class="stats">
+                    <div class="stat-item">
+                        <h4>3+</h4>
+                        <span>Continents</span>
+                    </div>
+                    <div class="stat-item">
+                        <h4>30+</h4>
+                        <span>Community Partners</span>
+                    </div>
+                    <div class="stat-item">
+                        <h4>50,000+</h4>
+                        <span>Lives Impacted</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-header">
+            <span style="font-size: 10px; font-weight: bold; color: var(--teal); text-transform: uppercase;">What We Do</span>
+            <h2 style="font-size: 36px;">A platform for <span class="highlight">lasting conservation</span></h2>
+        </section>
+
+        <div class="card-grid">
+            <div class="card">
+                <div class="circle-placeholder"></div>
+                <h3>Partnerships that deliver</h3>
+                <p>We bring together communities, NGOs, scientists, and funders to co-design long-term programmes with shared goals.</p>
+            </div>
+            <div class="card">
+                <div class="circle-placeholder"></div>
+                <h3>Protecting and restoring ecosystems</h3>
+                <p>From mangrove regeneration to coral reef monitoring, we support locally led conservation grounded in science.</p>
+            </div>
+            <div class="card">
+                <div class="circle-placeholder"></div>
+                <h3>Strengthening communities</h3>
+                <p>We invest in leadership, education, and youth engagement to ensure resilience and long-term stewardship.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <p style="max-width: 300px;">Enabling communities to lead environmental stewardship while strengthening livelihoods and education.</p>
+                </div>
+                <div class="footer-col">
+                    <h5>About</h5>
+                    <ul>
+                        <li>Our Mission</li>
+                        <li>Governance</li>
+                        <li>Reports</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Work</h5>
+                    <ul>
+                        <li>Programmes</li>
+                        <li>Impact</li>
+                        <li>Stories</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Get Involved</h5>
+                    <ul>
+                        <li>Partner</li>
+                        <li>Work with Us</li>
+                        <li>Donate</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -309,7 +309,7 @@ nav.scrolled { background: rgba(17,17,17,0.95); backdrop-filter: blur(12px); }
     text-shadow: 0 1px 8px rgba(0,0,0,0.4);
 }
 .impact-section.impact-visual h2 { color: #fff; margin-bottom: 14px; }
-.impact-section.impact-visual h2 .highlight { color: #fff; }
+.impact-section.impact-visual h2 .highlight { color: var(--teal); }
 .impact-section.impact-visual .impact-lead {
     color: rgba(255,255,255,0.95);
     max-width: 720px; margin: 0 auto 44px;

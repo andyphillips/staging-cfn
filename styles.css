@@ -17,7 +17,7 @@ body {
     font-family: 'Nunito', sans-serif;
     color: var(--text-dark);
     background: #fff;
-    font-size: 17px;
+    font-size: 18px;
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
 }
@@ -134,16 +134,16 @@ nav.scrolled { background: rgba(17,17,17,0.95); backdrop-filter: blur(12px); }
     margin-bottom: 14px; display: block;
 }
 .section-intro {
-    font-size: 18px; color: var(--text-gray); line-height: 1.7;
+    font-size: 19px; color: var(--text-gray); line-height: 1.7;
     max-width: 700px; margin-bottom: 36px;
 }
-.lead { font-size: 20px; color: var(--text-gray); line-height: 1.7; }
+.lead { font-size: 22px; color: var(--text-gray); line-height: 1.65; }
 
 .text-white { color: #fff; }
 .text-light { color: rgba(255,255,255,0.65); }
 .text-teal { color: var(--teal); }
 .text-center { text-align: center; }
-.text-body { font-size: 18px; color: var(--text-gray); line-height: 1.7; }
+.text-body { font-size: 19px; color: var(--text-gray); line-height: 1.7; }
 .mt-sm { margin-top: 16px; }
 .mt-md { margin-top: 28px; }
 .mt-lg { margin-top: 44px; }
@@ -164,7 +164,7 @@ nav.scrolled { background: rgba(17,17,17,0.95); backdrop-filter: blur(12px); }
 }
 .card h3 { font-size: 22px; margin-bottom: 14px; }
 .card h4 { font-size: 19px; margin-bottom: 10px; }
-.card p { font-size: 17px; color: var(--text-gray); line-height: 1.6; margin-bottom: 12px; }
+.card p { font-size: 18px; color: var(--text-gray); line-height: 1.65; margin-bottom: 12px; }
 .card p:last-child { margin-bottom: 0; }
 .card-centered { text-align: center; }
 .card-spaced { margin-bottom: 16px; }
@@ -207,7 +207,7 @@ nav.scrolled { background: rgba(17,17,17,0.95); backdrop-filter: blur(12px); }
 .split-feature-img { min-height: 280px; background-size: cover; background-position: center; }
 .split-feature-text { padding: 48px 24px; }
 .split-feature-text h2 { font-size: 26px; margin-bottom: 16px; }
-.split-feature-text p { font-size: 17px; line-height: 1.7; color: var(--text-gray); margin-bottom: 16px; }
+.split-feature-text p { font-size: 19px; line-height: 1.7; color: var(--text-gray); margin-bottom: 16px; }
 
 /* ============================================================
    APPROACH / PILLAR ITEMS
@@ -372,8 +372,8 @@ nav.scrolled { background: rgba(17,17,17,0.95); backdrop-filter: blur(12px); }
    ============================================================ */
 .checklist { list-style: none; }
 .checklist li {
-    padding: 12px 0; border-bottom: 1px solid rgba(0,0,0,0.06);
-    font-size: 17px; color: var(--text-gray);
+    padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.06);
+    font-size: 19px; color: var(--text-dark); line-height: 1.5;
 }
 .checklist li:last-child { border-bottom: none; }
 

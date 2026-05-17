@@ -19,12 +19,12 @@ images/
 figma/
 thumbs/
 
-# ---- Original / unoptimised media ----
-Homepage.jpg
-hero_bg.jpg
-logo.png
-logo_raw.png
-nav_preview.png
+# ---- Original / unoptimised media (at repo root only) ----
+/Homepage.jpg
+/hero_bg.jpg
+/logo.png
+/logo_raw.png
+/nav_preview.png
 
 # ---- Design exploration / dev artifacts ----
 index-old.html

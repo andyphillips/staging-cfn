@@ -39,18 +39,59 @@
         }
         .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
 
-        /* STATEMENT BAR */
-        .statement {
-            background: var(--teal); padding: 16px 20px;
-            display: flex; align-items: center; justify-content: center;
-            gap: 12px; flex-wrap: wrap; overflow: hidden;
+        /* PRINCIPLES — bold pillar statements */
+        .principles {
+            position: relative;
+            padding: 64px 20px;
+            background: var(--text-dark);
+            color: #fff;
+            overflow: hidden;
         }
-        .statement span {
-            font-size: 12px; font-weight: 700; letter-spacing: 2px;
-            text-transform: uppercase; color: #fff;
-            opacity: 0.9;
+        .principles::before {
+            content: ''; position: absolute; inset: 0;
+            background: url('AI_images/community_mangrove_planting.jpeg') center/cover;
+            opacity: 0.18; z-index: 0;
         }
-        .statement .dot { opacity: 0.5; }
+        .principles::after {
+            content: ''; position: absolute; inset: 0;
+            background: linear-gradient(135deg, rgba(14,110,117,0.85) 0%, rgba(17,17,17,0.85) 100%);
+            z-index: 0;
+        }
+        .principles-inner {
+            position: relative; z-index: 1;
+            max-width: var(--content-max); margin: 0 auto;
+        }
+        .principles-eyebrow {
+            text-align: center;
+            font-size: 13px; font-weight: 800; letter-spacing: 2.5px;
+            text-transform: uppercase; color: var(--teal);
+            margin-bottom: 12px;
+        }
+        .principles-heading {
+            text-align: center; font-family: 'Lora', serif;
+            font-size: 28px; line-height: 1.25;
+            margin-bottom: 40px; color: #fff;
+        }
+        .principles-grid {
+            display: grid; grid-template-columns: 1fr; gap: 24px;
+        }
+        .principle {
+            text-align: center;
+            padding: 24px 16px;
+            border-top: 2px solid var(--teal);
+        }
+        .principle .icon {
+            font-size: 36px; margin-bottom: 14px; display: block;
+        }
+        .principle h3 {
+            font-family: 'Lora', serif; font-weight: 500;
+            font-size: 24px; color: #fff;
+            margin-bottom: 10px; line-height: 1.2;
+        }
+        .principle p {
+            font-size: 16px; color: rgba(255,255,255,0.75);
+            line-height: 1.55; margin: 0;
+        }
 
         /* PATHWAYS */
         .pathways { padding: 56px 20px; background: var(--off-white); }
@@ -139,6 +180,10 @@
             .hero-content p { font-size: 19px; }
             .statement { padding: 18px 32px; gap: 24px; }
             .statement span { font-size: 13px; }
+            .principles { padding: 80px 32px; }
+            .principles-heading { font-size: 32px; margin-bottom: 48px; }
+            .principles-grid { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+            .principle h3 { font-size: 26px; }
             .pathways { padding: 72px 32px; }
             .pathways h2 { font-size: 34px; }
             .pathways-grid { grid-template-columns: repeat(3, 1fr); }
@@ -162,6 +207,13 @@
             .hero-content h1 { font-size: clamp(48px, 5.5vw, 64px); }
             .hero-content p { font-size: 20px; }
             .statement { padding: 22px 60px; gap: 36px; }
+            .principles { padding: 110px 60px; }
+            .principles-heading { font-size: 40px; margin-bottom: 64px; max-width: 760px; margin-left: auto; margin-right: auto; }
+            .principles-grid { grid-template-columns: repeat(4, 1fr); gap: 36px; }
+            .principle { padding: 32px 20px; }
+            .principle .icon { font-size: 44px; margin-bottom: 18px; }
+            .principle h3 { font-size: 28px; margin-bottom: 14px; }
+            .principle p { font-size: 17px; }
             .pathways { padding: 100px 60px; }
             .pathways h2 { font-size: 40px; margin-bottom: 56px; }
             .immersive-text { padding: 80px 64px; }
@@ -220,13 +272,35 @@
     </div>
 </section>
 
-<!-- STATEMENT BAR -->
-<div class="statement">
-    <span>Community-Led</span><span class="dot">◆</span>
-    <span>Science-Grounded</span><span class="dot">◆</span>
-    <span>Partnership-Driven</span><span class="dot">◆</span>
-    <span>Long-Term by Design</span>
-</div>
+<!-- PRINCIPLES -->
+<section class="principles">
+    <div class="principles-inner">
+        <p class="principles-eyebrow">How we work</p>
+        <h2 class="principles-heading">Four principles that shape <span class="highlight">everything</span> we do</h2>
+        <div class="principles-grid">
+            <div class="principle">
+                <span class="icon">🤝</span>
+                <h3>Community-Led</h3>
+                <p>Local leadership at the heart of every programme we design and deliver.</p>
+            </div>
+            <div class="principle">
+                <span class="icon">🔬</span>
+                <h3>Science-Grounded</h3>
+                <p>Decisions informed by evidence, monitoring and trusted field knowledge.</p>
+            </div>
+            <div class="principle">
+                <span class="icon">🌐</span>
+                <h3>Partnership-Driven</h3>
+                <p>Co-designed with funders, NGOs and communities — shared goals, shared accountability.</p>
+            </div>
+            <div class="principle">
+                <span class="icon">🌱</span>
+                <h3>Long-Term by Design</h3>
+                <p>Multi-year programmes built to endure long after initial funding cycles.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
 <!-- PATHWAYS -->
 <section class="pathways">

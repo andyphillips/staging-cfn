@@ -62,8 +62,9 @@ Replaced the plain stat row with a full-bleed visual band.
 
 - `ed07837` — Redesign homepage Impact section with underwater banner; copy + sizing tweaks
 - `86731f7` — Revert impact 'endure' highlight to brand teal
+- `2b1dd53` — Repoint asset paths after library/ restructure (31 files; 19 image renames detected at 100% similarity)
 
-Both pushed to `origin/main`.
+All pushed to `origin/main`.
 
 ## Files touched
 

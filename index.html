@@ -222,20 +222,73 @@
             line-height: 1.7; margin-bottom: 28px;
         }
 
-        /* PILLARS */
-        .pillars { padding: 56px 20px; background: #fff; }
-        .pillars-inner { max-width: 1100px; margin: 0 auto; }
-        .pillars h2 { font-size: 28px; margin-bottom: 32px; text-align: center; }
-        .pillars-row { display: grid; grid-template-columns: 1fr; gap: 32px; }
-        .pillar-item { text-align: center; }
-        .pillar-item .icon {
-            width: 68px; height: 68px; margin: 0 auto 18px;
-            border-radius: 50%; background: var(--off-white);
-            display: flex; align-items: center; justify-content: center;
-            font-size: 30px;
+        /* PILLARS — cinematic image cards */
+        .pillars {
+            padding: 64px 20px;
+            background: linear-gradient(180deg, #ffffff 0%, #faf8f3 100%);
         }
-        .pillar-item h3 { font-size: 22px; margin-bottom: 12px; }
-        .pillar-item p { font-size: 16px; color: var(--text-gray); line-height: 1.7; }
+        .pillars-inner { max-width: 1200px; margin: 0 auto; }
+        .pillars-eyebrow {
+            text-align: center;
+            font-size: 13px; font-weight: 800; letter-spacing: 2.5px;
+            text-transform: uppercase; color: var(--teal);
+            margin-bottom: 12px;
+        }
+        .pillars h2 { font-size: 30px; margin-bottom: 14px; text-align: center; line-height: 1.2; }
+        .pillars-intro {
+            text-align: center; max-width: 640px; margin: 0 auto 40px;
+            font-size: 17px; color: var(--text-gray); line-height: 1.6;
+        }
+        .pillars-row { display: grid; grid-template-columns: 1fr; gap: 20px; }
+        .pillar-card {
+            position: relative; display: block;
+            min-height: 420px; border-radius: 14px;
+            overflow: hidden; cursor: pointer;
+            background-size: cover; background-position: center;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+            color: #fff; text-decoration: none;
+        }
+        .pillar-card::before {
+            /* Subtle zoom layer using ::before for image, keeps overlay stable */
+            content: ''; position: absolute; inset: 0;
+            background: inherit;
+            background-size: inherit; background-position: inherit;
+            transition: transform 0.7s ease;
+        }
+        .pillar-card::after {
+            content: ''; position: absolute; inset: 0;
+            background: linear-gradient(to top,
+                rgba(0,0,0,0.88) 0%,
+                rgba(0,0,0,0.5) 45%,
+                rgba(0,0,0,0.15) 75%,
+                rgba(0,0,0,0.05) 100%);
+            transition: opacity 0.4s ease;
+        }
+        .pillar-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.22);
+        }
+        .pillar-card:hover::after { opacity: 0.92; }
+        .pillar-content {
+            position: absolute; bottom: 0; left: 0; right: 0; z-index: 2;
+            padding: 32px 26px;
+        }
+        .pillar-content .accent {
+            display: inline-block; width: 40px; height: 3px;
+            background: var(--teal); margin-bottom: 14px;
+            transition: width 0.4s ease;
+        }
+        .pillar-card:hover .pillar-content .accent { width: 72px; }
+        .pillar-content h3 {
+            font-family: 'Lora', serif; font-weight: 500;
+            font-size: 26px; color: #fff;
+            margin-bottom: 12px; line-height: 1.2;
+        }
+        .pillar-content p {
+            font-size: 16px; color: rgba(255,255,255,0.88);
+            line-height: 1.55; margin: 0;
+        }
 
         /* IMPACT SECTION (uses shared .impact-row from styles.css) */
         .impact-section { padding: 56px 20px; background: var(--off-white); }
@@ -291,8 +344,13 @@
             .immersive-img { min-height: 480px; }
             .immersive-text { padding: 64px 40px; }
             .immersive-text h2 { font-size: 30px; }
-            .pillars { padding: 72px 32px; }
-            .pillars-row { grid-template-columns: repeat(3, 1fr); gap: 36px; }
+            .pillars { padding: 96px 32px; }
+            .pillars h2 { font-size: 38px; margin-bottom: 16px; }
+            .pillars-intro { font-size: 19px; margin-bottom: 56px; }
+            .pillars-row { grid-template-columns: repeat(3, 1fr); gap: 24px; }
+            .pillar-card { min-height: 500px; }
+            .pillar-content { padding: 40px 30px; }
+            .pillar-content h3 { font-size: 28px; }
             .impact-section { padding: 72px 32px; }
             .impact-section h2 { font-size: 34px; }
             .more-stories { padding: 72px 32px; }
@@ -327,8 +385,14 @@
             .immersive-text { padding: 80px 64px; }
             .immersive-text h2 { font-size: 36px; }
             .immersive-text p { font-size: 19px; }
-            .pillars { padding: 100px 60px; }
-            .pillars h2 { font-size: 40px; margin-bottom: 56px; }
+            .pillars { padding: 130px 60px; }
+            .pillars h2 { font-size: 48px; margin-bottom: 18px; }
+            .pillars-intro { font-size: 20px; margin-bottom: 72px; }
+            .pillars-row { gap: 28px; }
+            .pillar-card { min-height: 620px; }
+            .pillar-content { padding: 52px 40px; }
+            .pillar-content h3 { font-size: 34px; margin-bottom: 16px; }
+            .pillar-content p { font-size: 17px; }
             .impact-section { padding: 100px 60px; }
             .impact-section h2 { font-size: 40px; }
             .more-stories { padding: 100px 60px; }
@@ -468,23 +532,31 @@
 <!-- PILLARS -->
 <section class="pillars">
     <div class="pillars-inner">
+        <p class="pillars-eyebrow">Our platform</p>
         <h2>A platform for <span class="highlight">lasting</span> conservation</h2>
+        <p class="pillars-intro">Three foundations that turn intention into enduring impact — together.</p>
         <div class="pillars-row">
-            <div class="pillar-item">
-                <div class="icon">🤝</div>
-                <h3>Partnerships that deliver</h3>
-                <p>Communities, NGOs, scientists, corporates and funders co-designing long-term programmes with shared goals and measurable outcomes.</p>
-            </div>
-            <div class="pillar-item">
-                <div class="icon">🌊</div>
-                <h3>Protecting ecosystems</h3>
-                <p>Mangrove regeneration, coral reef monitoring, forest restoration, species protection — locally led, scientifically grounded.</p>
-            </div>
-            <div class="pillar-item">
-                <div class="icon">🌱</div>
-                <h3>Strengthening communities</h3>
-                <p>Leadership, education, youth engagement and enterprise development for real economic resilience and stewardship.</p>
-            </div>
+            <a href="get-involved.html" class="pillar-card" style="background-image: url('AI_images/Partner_with_us_strategic_partnerships.jpeg');">
+                <div class="pillar-content">
+                    <span class="accent"></span>
+                    <h3>Partnerships that deliver</h3>
+                    <p>Communities, NGOs, scientists, corporates and funders co-designing long-term programmes with shared goals and measurable outcomes.</p>
+                </div>
+            </a>
+            <a href="programmes.html" class="pillar-card" style="background-image: url('AI_images/Mangroves_above_below_water.png');">
+                <div class="pillar-content">
+                    <span class="accent"></span>
+                    <h3>Protecting ecosystems</h3>
+                    <p>Mangrove regeneration, coral reef monitoring, forest restoration, species protection — locally led, scientifically grounded.</p>
+                </div>
+            </a>
+            <a href="stories.html" class="pillar-card" style="background-image: url('AI_images/happy_coastal_community_fishing_boat_philippines.jpeg');">
+                <div class="pillar-content">
+                    <span class="accent"></span>
+                    <h3>Strengthening communities</h3>
+                    <p>Leadership, education, youth engagement and enterprise development for real economic resilience and stewardship.</p>
+                </div>
+            </a>
         </div>
     </div>
 </section>

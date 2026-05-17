@@ -93,12 +93,59 @@
             line-height: 1.55; margin: 0;
         }
 
-        /* PATHWAYS */
-        .pathways { padding: 56px 20px; background: var(--off-white); }
-        .pathways h2 { font-size: 28px; text-align: center; margin-bottom: 32px; }
+        /* PATHWAYS — featured engagement section */
+        .pathways {
+            position: relative;
+            padding: 72px 20px;
+            background: linear-gradient(180deg, var(--off-white) 0%, #e8e3d8 100%);
+            overflow: hidden;
+        }
+        .pathways::before {
+            content: ''; position: absolute;
+            top: -120px; right: -120px;
+            width: 380px; height: 380px;
+            background: radial-gradient(circle, rgba(34,167,176,0.18) 0%, transparent 65%);
+            z-index: 0; pointer-events: none;
+        }
+        .pathways::after {
+            content: ''; position: absolute;
+            bottom: -140px; left: -140px;
+            width: 420px; height: 420px;
+            background: radial-gradient(circle, rgba(14,110,117,0.12) 0%, transparent 65%);
+            z-index: 0; pointer-events: none;
+        }
+        .pathways-inner {
+            position: relative; z-index: 1;
+            max-width: var(--content-max); margin: 0 auto;
+        }
+        .pathways-eyebrow {
+            text-align: center;
+            font-size: 13px; font-weight: 800; letter-spacing: 2.5px;
+            text-transform: uppercase; color: var(--teal);
+            margin-bottom: 12px;
+        }
+        .pathways h2 {
+            font-size: 30px; text-align: center;
+            margin-bottom: 14px; line-height: 1.2;
+        }
+        .pathways-intro {
+            text-align: center; max-width: 600px;
+            margin: 0 auto 40px;
+            font-size: 17px; color: var(--text-gray);
+            line-height: 1.6;
+        }
         .pathways-grid {
             display: grid; grid-template-columns: 1fr;
-            gap: 16px; max-width: var(--content-max); margin: 0 auto;
+            gap: 28px;
+        }
+        /* Card lift on hover, more shadow */
+        .pathways .pw-card {
+            box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+        .pathways .pw-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 18px 44px rgba(0,0,0,0.18);
         }
 
         /* IMMERSIVE STORY */
@@ -184,9 +231,10 @@
             .principles-heading { font-size: 32px; margin-bottom: 48px; }
             .principles-grid { grid-template-columns: repeat(2, 1fr); gap: 32px; }
             .principle h3 { font-size: 26px; }
-            .pathways { padding: 72px 32px; }
-            .pathways h2 { font-size: 34px; }
-            .pathways-grid { grid-template-columns: repeat(3, 1fr); }
+            .pathways { padding: 96px 32px; }
+            .pathways h2 { font-size: 38px; margin-bottom: 16px; }
+            .pathways-intro { font-size: 19px; margin-bottom: 56px; }
+            .pathways-grid { grid-template-columns: repeat(3, 1fr); gap: 32px; }
             .immersive { grid-template-columns: 1fr 1fr; }
             .immersive-img { min-height: 480px; }
             .immersive-text { padding: 64px 40px; }
@@ -214,8 +262,10 @@
             .principle .icon { font-size: 44px; margin-bottom: 18px; }
             .principle h3 { font-size: 28px; margin-bottom: 14px; }
             .principle p { font-size: 17px; }
-            .pathways { padding: 100px 60px; }
-            .pathways h2 { font-size: 40px; margin-bottom: 56px; }
+            .pathways { padding: 130px 60px; }
+            .pathways h2 { font-size: 48px; margin-bottom: 18px; }
+            .pathways-intro { font-size: 20px; margin-bottom: 72px; }
+            .pathways-grid { gap: 44px; }
             .immersive-text { padding: 80px 64px; }
             .immersive-text h2 { font-size: 36px; }
             .immersive-text p { font-size: 19px; }
@@ -304,32 +354,36 @@
 
 <!-- PATHWAYS -->
 <section class="pathways">
-    <h2>How would you like to <span class="highlight">engage?</span></h2>
-    <div class="pathways-grid">
-        <a href="get-involved.html#partner" class="pw-card">
-            <img src="AI_images/Partner_with_us_strategic_partnerships.jpeg" alt="Corporate partnership">
-            <div class="pw-card-content">
-                <h3>For Corporates &amp; Strategic Partners</h3>
-                <p>Deliver high-impact ESG outcomes through trusted partners.</p>
-                <span class="pw-link">Partner With Us →</span>
-            </div>
-        </a>
-        <a href="get-involved.html#work" class="pw-card">
-            <img src="AI_images/tropical_learning_circle_community.jpeg" alt="Community delivery">
-            <div class="pw-card-content">
-                <h3>For Community Partners</h3>
-                <p>Collaborate on community-led conservation programmes.</p>
-                <span class="pw-link">Work With Us →</span>
-            </div>
-        </a>
-        <a href="donate.html" class="pw-card">
-            <img src="AI_images/partners_and_donors.jpeg" alt="Individual supporters">
-            <div class="pw-card-content">
-                <h3>For Supporters &amp; Donors</h3>
-                <p>Stay informed, be inspired and support conservation.</p>
-                <span class="pw-link">Explore &amp; Engage →</span>
-            </div>
-        </a>
+    <div class="pathways-inner">
+        <p class="pathways-eyebrow">Get Involved</p>
+        <h2>How would you like to <span class="highlight">engage?</span></h2>
+        <p class="pathways-intro">Whether you're a corporate, community organisation or individual supporter — there's a meaningful way for you to help create lasting change.</p>
+        <div class="pathways-grid">
+            <a href="get-involved.html#partner" class="pw-card">
+                <img src="AI_images/Partner_with_us_strategic_partnerships.jpeg" alt="Corporate partnership">
+                <div class="pw-card-content">
+                    <h3>For Corporates &amp; Strategic Partners</h3>
+                    <p>Deliver high-impact ESG outcomes through trusted partners.</p>
+                    <span class="pw-link">Partner With Us →</span>
+                </div>
+            </a>
+            <a href="get-involved.html#work" class="pw-card">
+                <img src="AI_images/tropical_learning_circle_community.jpeg" alt="Community delivery">
+                <div class="pw-card-content">
+                    <h3>For Community Partners</h3>
+                    <p>Collaborate on community-led conservation programmes.</p>
+                    <span class="pw-link">Work With Us →</span>
+                </div>
+            </a>
+            <a href="donate.html" class="pw-card">
+                <img src="AI_images/partners_and_donors.jpeg" alt="Individual supporters">
+                <div class="pw-card-content">
+                    <h3>For Supporters &amp; Donors</h3>
+                    <p>Stay informed, be inspired and support conservation.</p>
+                    <span class="pw-link">Explore &amp; Engage →</span>
+                </div>
+            </a>
+        </div>
     </div>
 </section>
 

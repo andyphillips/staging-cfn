@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programmes — Communities for Nature</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Square+Peg&family=Nunito:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+    <div class="nav-logo"><a href="index.html"><img src="assets/logo.png" alt="Communities for Nature"></a></div>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="work-and-impact.html" class="active">Work &amp; Impact</a>
+        <a href="get-involved.html">Get Involved</a>
+        <a href="stories.html">Stories</a>
+        <a href="donate.html" class="nav-cta">Donate</a>
+    </div>
+    <button class="nav-hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<div id="mobileMenu" class="nav-mobile-overlay">
+    <button class="nav-mobile-close" onclick="this.parentElement.classList.remove('open')">&times;</button>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="work-and-impact.html">Work &amp; Impact</a>
+    <a href="get-involved.html">Get Involved</a>
+    <a href="stories.html">Stories</a>
+    <a href="contact.html">Contact</a>
+    <a href="donate.html" class="nav-cta">Donate</a>
+</div>
+
+<section class="page-hero" style="background-image: url('AI_images/Mangroves_above_below_water.png');">
+    <div class="page-hero-content">
+        <span class="section-label">Programmes</span>
+        <h1>Programmes in <span class="highlight">action</span></h1>
+        <p>Multi-year partnerships across marine, coastal and grassroots conservation.</p>
+    </div>
+</section>
+
+<section class="content-section">
+    <div class="content-wide">
+        <div class="filter-tabs">
+            <span class="filter-tab active">All</span>
+            <span class="filter-tab">Active</span>
+            <span class="filter-tab">Completed</span>
+        </div>
+
+        <div class="three-col-grid">
+            <div class="programme-card">
+                <div class="programme-card-img"><img src="https://images.unsplash.com/photo-1546026423-cc4642628d2b?w=800&q=80&auto=format" alt="Reef conservation"></div>
+                <div class="programme-card-body">
+                    <p class="region">Philippines — Marine &amp; Forest</p>
+                    <h3>Project ACE</h3>
+                    <p class="subtitle">Reef &amp; Rainforest Conservation</p>
+                    <p>Integrating coral reef conservation, forest stewardship and community livelihoods.</p>
+                    <p class="meta-info"><strong>Funding Partner:</strong> LMAX Group</p>
+                    <p class="meta-info"><strong>Delivery:</strong> PRRCFI; local People's Organisations</p>
+                    <a href="programme-mithi.html" class="btn btn-primary">View Details</a>
+                </div>
+            </div>
+            <div class="programme-card">
+                <div class="programme-card-img"><img src="AI_images/Mangroves_above_below_water.png" alt="Mangrove restoration"></div>
+                <div class="programme-card-body">
+                    <p class="region">Philippines — Coastal</p>
+                    <h3>Project MITHI</h3>
+                    <p class="subtitle">Mangrove Restoration &amp; Livelihoods</p>
+                    <p>Restoring mangroves along the Philippine coastline through community-led stewardship.</p>
+                    <p class="meta-info"><strong>Funding Partner:</strong> Security Bank</p>
+                    <p class="meta-info"><strong>Delivery:</strong> Oceanus Conservation; local orgs</p>
+                    <a href="programme-mithi.html" class="btn btn-primary">View Details</a>
+                </div>
+            </div>
+            <div class="programme-card">
+                <div class="programme-card-img"><img src="AI_images/Tropical_children_walking_along_trail.png" alt="Grassroots"></div>
+                <div class="programme-card-body">
+                    <p class="region">Global — Grassroots</p>
+                    <h3>Green Spark Fund</h3>
+                    <p class="subtitle">Grassroots Innovation Portfolio</p>
+                    <p>Rotating portfolio supporting frontline organisations across Asia and Africa.</p>
+                    <p class="meta-info"><strong>Partners:</strong> ASRI · Bigna Harta · Hummingbird · Rosa Care · RootEd</p>
+                    <a href="programmes.html" class="btn btn-primary">View Portfolio</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-band">
+    <h2>Interested in a <span class="highlight">partnership?</span></h2>
+    <p>Let's design a programme together — long-term, locally rooted, measurably impactful.</p>
+    <a href="contact.html" class="btn btn-primary">Start a Conversation</a>
+</section>
+
+<footer>
+    <div class="footer-grid">
+        <div class="footer-about"><strong class="footer-brand">COMMUNITIES FOR NATURE</strong><p>Enabling communities to lead environmental stewardship while strengthening livelihoods, education and long-term resilience.</p></div>
+        <div class="footer-col"><h5>About</h5><ul><li><a href="about.html">About</a></li><li><a href="about.html">Our Mission &amp; Model</a></li><li><a href="about.html">Governance &amp; Trustees</a></li></ul></div>
+        <div class="footer-col"><h5>Work &amp; Impact</h5><ul><li><a href="work-and-impact.html">Explore Our Work</a></li><li><a href="programmes.html">Programmes</a></li><li><a href="stories.html">Stories &amp; Insights</a></li></ul></div>
+        <div class="footer-col"><h5>Get Involved</h5><ul><li><a href="get-involved.html">Partner with Us</a></li><li><a href="get-involved.html#work">Work with Us</a></li><li><a href="donate.html">Donate</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Communities for Nature. U.K. Charity (registration number 1204810). All Rights Reserved.</span><span>Privacy Policy · Terms of Use · Cookie Policy</span></div>
+</footer>
+<script>window.addEventListener('scroll',()=>{document.querySelector('nav').classList.toggle('scrolled',window.scrollY>60);});</script>
+</body>
+</html>
+

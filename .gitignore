@@ -1,0 +1,42 @@
+# ============================================================
+# Communities for Nature — .gitignore
+# ============================================================
+
+# ---- IDE / Editor ----
+.idea/
+.vscode/
+*.iml
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# ---- Large source-image folders (not used by the published site) ----
+# These contain originals / scans / Figma exports kept locally
+# Only assets/ and AI_images/ are published.
+newImages/
+images/
+figma/
+thumbs/
+
+# ---- Original / unoptimised media ----
+Homepage.jpg
+hero_bg.jpg
+logo.png
+logo_raw.png
+nav_preview.png
+
+# ---- Design exploration / dev artifacts ----
+index-old.html
+homepage-content.html
+option-a-cinematic.html
+option-b-editorial.html
+option-c-bold.html
+option-d-animated.html
+Prompt.txt
+
+# ---- Build output (none currently) ----
+node_modules/
+dist/
+*.log
+

@@ -3,680 +3,398 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Communities for Nature | Partnerships that Work</title>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Square+Peg&family=Nunito:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <title>Communities for Nature</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Square+Peg&family=Nunito:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
     <style>
-        :root {
-            --teal: #22a7b0;
-            --dark-teal: #0e6e75;
-            --text-dark: #111111;
-            --text-gray: #4a4a4a;
-            --off-white: #f5f3ef;
-        }
+        /* HOME-PAGE-ONLY STYLES (Mobile First) */
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-
-        body {
-            font-family: 'Nunito', sans-serif;
-            color: var(--text-dark);
-            background: #fff;
-            overflow-x: hidden;
-        }
-
-        h1, h2, h3, h4 {
-            font-family: 'Lora', serif;
-            font-weight: 400;
-        }
-
-        .highlight {
-            color: var(--teal);
-            font-family: 'Square Peg', cursive;
-            font-size: 1.5em;
-            line-height: 1;
-            position: relative;
-            top: -0.05em;
-        }
-
-        a { text-decoration: none; color: inherit; }
-
-        /* ── NAV ── */
-        nav {
-            position: fixed;
-            top: 0; left: 0; right: 0;
-            z-index: 100;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 18px 48px;
-            background: rgba(0,0,0,0.35);
-            backdrop-filter: blur(6px);
-        }
-
-        .logo img { height: 52px; width: auto; }
-
-        .nav-links {
-            display: flex;
-            gap: 32px;
-            align-items: center;
-        }
-
-        .nav-links a {
-            color: #fff;
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-weight: 700;
-            opacity: 0.9;
-            transition: opacity 0.2s;
-        }
-
-        .nav-links a:hover { opacity: 1; }
-
-        .btn-donate {
-            background: var(--teal);
-            color: #fff !important;
-            padding: 10px 22px;
-            border-radius: 2px;
-            opacity: 1 !important;
-        }
-
-        /* ── HERO ── */
+        /* HERO with video — mobile first */
         .hero {
-            position: relative;
-            height: 100vh;
-            min-height: 600px;
-            display: flex;
-            align-items: flex-end;
-            background: url('images/hero.jpg') center center / cover no-repeat;
+            position: relative; min-height: 100vh;
+            display: flex; align-items: center;
+            background: var(--text-dark); overflow: hidden;
         }
-
+        .hero-video {
+            position: absolute; inset: 0; width: 100%; height: 100%;
+            object-fit: cover; opacity: 0.75;
+        }
         .hero::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.2) 60%, transparent 100%);
+            content: ''; position: absolute; inset: 0;
+            background: linear-gradient(135deg, rgba(17,17,17,0.45) 0%, rgba(17,17,17,0.1) 50%, rgba(14,110,117,0.05) 100%);
         }
-
         .hero-content {
-            position: relative;
-            z-index: 2;
-            padding: 0 48px 80px;
-            max-width: 900px;
+            position: relative; z-index: 2;
+            padding: 100px 20px 60px;
+            max-width: 720px;
         }
-
         .hero-content h1 {
-            font-family: 'Lora', serif;
-            font-weight: 400;
-            font-size: clamp(42px, 6vw, 84px);
-            line-height: 1.1;
-            color: #fff;
-            letter-spacing: -0.5px;
-            margin-bottom: 24px;
+            font-size: 36px; color: #fff;
+            line-height: 1.15; margin-bottom: 20px;
         }
-
-        .hero-content h1 em {
-            font-family: 'Square Peg', cursive;
-            font-style: normal;
-            font-weight: 400;
-            color: var(--teal);
-            font-size: 1.3em;
-            display: block;
-            line-height: 0.9;
-            letter-spacing: 0;
-            margin-top: 4px;
-        }
-
         .hero-content p {
             color: rgba(255,255,255,0.85);
-            font-size: 18px;
-            max-width: 560px;
-            line-height: 1.7;
-            margin-bottom: 32px;
+            font-size: 17px; line-height: 1.7;
+            max-width: 520px; margin-bottom: 32px;
+        }
+        .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+
+        /* STATEMENT BAR */
+        .statement {
+            background: var(--teal); padding: 16px 20px;
+            display: flex; align-items: center; justify-content: center;
+            gap: 12px; flex-wrap: wrap; overflow: hidden;
+        }
+        .statement span {
+            font-size: 12px; font-weight: 700; letter-spacing: 2px;
+            text-transform: uppercase; color: #fff;
+            opacity: 0.9;
+        }
+        .statement .dot { opacity: 0.5; }
+
+        /* PATHWAYS */
+        .pathways { padding: 56px 20px; background: var(--off-white); }
+        .pathways h2 { font-size: 28px; text-align: center; margin-bottom: 32px; }
+        .pathways-grid {
+            display: grid; grid-template-columns: 1fr;
+            gap: 16px; max-width: var(--content-max); margin: 0 auto;
         }
 
-        .hero-buttons { display: flex; gap: 16px; }
-
-        .btn {
-            display: inline-block;
-            padding: 14px 30px;
-            font-size: 12px;
-            font-weight: 800;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            border-radius: 2px;
-            transition: 0.25s;
+        /* IMMERSIVE STORY */
+        .immersive {
+            position: relative; display: grid;
+            grid-template-columns: 1fr; min-height: auto;
+        }
+        .immersive-img { min-height: 280px; overflow: hidden; }
+        .immersive-img img {
+            width: 100%; height: 100%; object-fit: cover;
+            min-height: 280px;
+        }
+        .immersive-text {
+            display: flex; flex-direction: column; justify-content: center;
+            padding: 48px 24px; background: var(--text-dark);
+        }
+        .immersive-text .tag {
+            font-size: 12px; font-weight: 800; letter-spacing: 2px;
+            text-transform: uppercase; color: var(--teal); margin-bottom: 16px;
+        }
+        .immersive-text h2 {
+            font-size: 26px; color: #fff;
+            margin-bottom: 18px; line-height: 1.3;
+        }
+        .immersive-text p {
+            font-size: 17px; color: rgba(255,255,255,0.7);
+            line-height: 1.7; margin-bottom: 28px;
         }
 
-        .btn-primary { background: var(--teal); color: #fff; }
-        .btn-primary:hover { background: var(--dark-teal); }
-        .btn-ghost { border: 1.5px solid rgba(255,255,255,0.7); color: #fff; }
-        .btn-ghost:hover { border-color: #fff; background: rgba(255,255,255,0.1); }
+        /* PILLARS */
+        .pillars { padding: 56px 20px; background: #fff; }
+        .pillars-inner { max-width: 1100px; margin: 0 auto; }
+        .pillars h2 { font-size: 28px; margin-bottom: 32px; text-align: center; }
+        .pillars-row { display: grid; grid-template-columns: 1fr; gap: 32px; }
+        .pillar-item { text-align: center; }
+        .pillar-item .icon {
+            width: 68px; height: 68px; margin: 0 auto 18px;
+            border-radius: 50%; background: var(--off-white);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 30px;
+        }
+        .pillar-item h3 { font-size: 22px; margin-bottom: 12px; }
+        .pillar-item p { font-size: 16px; color: var(--text-gray); line-height: 1.7; }
 
-        /* ── TICKER ── */
-        .ticker {
-            background: var(--teal);
-            overflow: hidden;
-            padding: 14px 0;
-            white-space: nowrap;
+        /* IMPACT SECTION (uses shared .impact-row from styles.css) */
+        .impact-section { padding: 56px 20px; background: var(--off-white); }
+        .impact-section h2 { font-size: 28px; text-align: center; margin-bottom: 12px; }
+        .impact-section > p {
+            text-align: center; font-size: 17px; color: var(--text-gray);
+            max-width: 680px; margin: 0 auto 36px; line-height: 1.6;
         }
 
-        .ticker-track {
-            display: inline-block;
-            animation: ticker 22s linear infinite;
+        /* MORE STORIES (uses shared .story-strip / .story-item from styles.css) */
+        .more-stories { padding: 56px 20px; }
+        .more-stories h2 { font-size: 28px; margin-bottom: 32px; text-align: center; }
+
+        /* FINAL CTA */
+        .final-cta {
+            padding: 72px 20px; text-align: center;
+            background: var(--text-dark); position: relative; overflow: hidden;
         }
-
-        .ticker-track span {
-            font-size: 11px;
-            font-weight: 800;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: #fff;
-            padding: 0 40px;
+        .final-cta::before {
+            content: ''; position: absolute; inset: 0;
+            background: url('AI_images/Mother_child_tropical_shoreline.jpeg') center/cover;
+            opacity: 0.2;
         }
-
-        .ticker-track span::before {
-            content: '◆';
-            margin-right: 40px;
-            opacity: 0.5;
-        }
-
-        @keyframes ticker {
-            from { transform: translateX(0); }
-            to { transform: translateX(-50%); }
-        }
-
-        /* ── STATS ── */
-        .stats-band {
-            background: var(--off-white);
-            padding: 64px 48px;
-            display: grid;
-            grid-template-columns: 1.5fr repeat(3, 1fr);
-            gap: 40px;
-            align-items: center;
-        }
-
-        .stats-intro h2 {
-            font-size: 32px;
-            line-height: 1.3;
-            margin-bottom: 16px;
-        }
-
-        .stats-intro p {
-            font-size: 15px;
-            color: var(--text-gray);
-            line-height: 1.7;
-        }
-
-        .stat-item {
-            border-left: 2px solid var(--teal);
-            padding-left: 24px;
-        }
-
-        .stat-item h3 {
-            font-family: 'Nunito', sans-serif;
-            font-weight: 900;
-            font-size: 52px;
-            color: var(--teal);
-            line-height: 1;
-            margin-bottom: 6px;
-        }
-
-        .stat-item p {
-            font-size: 12px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: var(--text-gray);
-        }
-
-        /* ── SECTION LABEL ── */
-        .section-label {
-            font-size: 10px;
-            font-weight: 800;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: var(--teal);
-            margin-bottom: 16px;
-            display: block;
-        }
-
-        /* ── STORY CARDS ── */
-        .stories-section {
-            padding: 80px 48px;
-        }
-
-        .stories-section > h2 {
-            font-size: 40px;
-            margin-bottom: 48px;
-            max-width: 600px;
-        }
-
-        .stories-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2px;
-        }
-
-        .story-card {
-            position: relative;
-            height: 480px;
-            overflow: hidden;
-            cursor: pointer;
-        }
-
-        .story-card-bg {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.5s ease;
-            background: #1a2a2a;
-        }
-
-        .story-card:hover .story-card-bg { transform: scale(1.04); }
-
-        .story-card::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%);
-        }
-
-        .story-card-content {
-            position: absolute;
-            bottom: 0; left: 0; right: 0;
-            z-index: 2;
-            padding: 28px;
-        }
-
-        .story-tag {
-            display: inline-block;
-            font-size: 9px;
-            font-weight: 800;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: #fff;
-            background: var(--teal);
-            padding: 4px 10px;
-            margin-bottom: 12px;
-        }
-
-        .story-card-content h3 {
-            font-size: 20px;
-            color: #fff;
-            line-height: 1.3;
-            margin-bottom: 10px;
-        }
-
-        .story-card-content p {
-            font-size: 13px;
+        .final-cta-inner { position: relative; z-index: 2; max-width: 720px; margin: 0 auto; }
+        .final-cta h2 { font-size: 30px; color: #fff; margin-bottom: 16px; }
+        .final-cta p {
             color: rgba(255,255,255,0.75);
-            line-height: 1.5;
+            font-size: 17px; max-width: 600px;
+            margin: 0 auto 28px; line-height: 1.6;
         }
 
-        /* Story card placeholder colours */
-        .card-bg-1 { background: linear-gradient(135deg, #0e4d40 0%, #1a7a6e 100%); }
-        .card-bg-2 { background: linear-gradient(135deg, #1a3a5c 0%, #2a6090 100%); }
-        .card-bg-3 { background: linear-gradient(135deg, #3d2a0e 0%, #7a5a20 100%); }
-
-        /* ── QUOTE BAND ── */
-        .quote-band {
-            background: var(--text-dark);
-            padding: 96px 48px;
-            text-align: center;
+        /* TABLET (640px+) */
+        @media (min-width: 640px) {
+            .hero-content { padding: 130px 32px 80px; }
+            .hero-content h1 { font-size: 46px; }
+            .hero-content p { font-size: 19px; }
+            .statement { padding: 18px 32px; gap: 24px; }
+            .statement span { font-size: 13px; }
+            .pathways { padding: 72px 32px; }
+            .pathways h2 { font-size: 34px; }
+            .pathways-grid { grid-template-columns: repeat(3, 1fr); }
+            .immersive { grid-template-columns: 1fr 1fr; }
+            .immersive-img { min-height: 480px; }
+            .immersive-text { padding: 64px 40px; }
+            .immersive-text h2 { font-size: 30px; }
+            .pillars { padding: 72px 32px; }
+            .pillars-row { grid-template-columns: repeat(3, 1fr); gap: 36px; }
+            .impact-section { padding: 72px 32px; }
+            .impact-section h2 { font-size: 34px; }
+            .more-stories { padding: 72px 32px; }
+            .more-stories h2 { font-size: 34px; text-align: left; }
+            .final-cta { padding: 96px 32px; }
+            .final-cta h2 { font-size: 36px; }
         }
 
-        .quote-band blockquote {
-            font-family: 'Lora', serif;
-            font-weight: 400;
-            font-style: italic;
-            font-size: clamp(24px, 3.5vw, 44px);
-            color: #fff;
-            max-width: 900px;
-            margin: 0 auto 32px;
-            line-height: 1.4;
-        }
-
-        .quote-band blockquote::before { content: '\201C'; color: var(--teal); }
-        .quote-band blockquote::after  { content: '\201D'; color: var(--teal); }
-
-        .quote-attribution {
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--teal);
-        }
-
-        /* ── PILLARS ── */
-        .pillars-section {
-            padding: 80px 48px;
-            background: #fff;
-        }
-
-        .pillars-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            margin-bottom: 48px;
-        }
-
-        .pillars-header h2 { font-size: 40px; max-width: 500px; }
-
-        .pillars-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1px;
-            background: #e0e0e0;
-        }
-
-        .pillar {
-            background: #fff;
-            padding: 48px 40px;
-        }
-
-        .pillar-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background: var(--teal);
-            margin-bottom: 28px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 22px;
-        }
-
-        .pillar h3 {
-            font-size: 22px;
-            margin-bottom: 16px;
-            line-height: 1.3;
-        }
-
-        .pillar p {
-            font-size: 15px;
-            color: var(--text-gray);
-            line-height: 1.75;
-        }
-
-        .pillar-link {
-            display: inline-block;
-            margin-top: 24px;
-            font-size: 11px;
-            font-weight: 800;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--teal);
-            border-bottom: 1.5px solid var(--teal);
-            padding-bottom: 2px;
-        }
-
-        /* ── CTA BAND ── */
-        .cta-band {
-            background: var(--teal);
-            padding: 72px 48px;
-            display: grid;
-            grid-template-columns: 1fr auto;
-            align-items: center;
-            gap: 40px;
-        }
-
-        .cta-band h2 {
-            font-size: 36px;
-            color: #fff;
-            max-width: 600px;
-        }
-
-        .btn-white {
-            background: #fff;
-            color: var(--teal);
-            white-space: nowrap;
-        }
-
-        .btn-white:hover { background: var(--off-white); }
-
-        /* ── FOOTER ── */
-        footer {
-            background: var(--text-dark);
-            color: rgba(255,255,255,0.65);
-            padding: 72px 48px 40px;
-        }
-
-        .footer-top {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 48px;
-            padding-bottom: 48px;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            margin-bottom: 32px;
-        }
-
-        .footer-logo img { height: 48px; margin-bottom: 20px; }
-
-        .footer-col p {
-            font-size: 14px;
-            line-height: 1.75;
-            max-width: 280px;
-        }
-
-        .footer-col h5 {
-            font-size: 10px;
-            font-weight: 800;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: var(--teal);
-            margin-bottom: 20px;
-        }
-
-        .footer-col ul { list-style: none; }
-
-        .footer-col ul li {
-            margin-bottom: 12px;
-            font-size: 14px;
-        }
-
-        .footer-col ul li a:hover { color: #fff; }
-
-        .footer-bottom {
-            display: flex;
-            justify-content: space-between;
-            font-size: 12px;
-            opacity: 0.5;
-        }
-
-        /* ── RESPONSIVE ── */
-        @media (max-width: 900px) {
-            nav { padding: 16px 24px; }
-            .nav-links { display: none; }
-            .hero-content { padding: 0 24px 60px; }
-            .stats-band { grid-template-columns: 1fr 1fr; padding: 48px 24px; }
-            .stories-section, .pillars-section { padding: 60px 24px; }
-            .stories-grid, .pillars-grid { grid-template-columns: 1fr; }
-            .story-card { height: 360px; }
-            .cta-band { grid-template-columns: 1fr; padding: 48px 24px; }
-            .footer-top { grid-template-columns: 1fr 1fr; padding: 40px 24px 40px; }
-            footer { padding: 48px 24px 32px; }
+        /* DESKTOP (1024px+) */
+        @media (min-width: 1024px) {
+            .hero-content { padding: 0 60px; }
+            .hero-content h1 { font-size: clamp(48px, 5.5vw, 64px); }
+            .hero-content p { font-size: 20px; }
+            .statement { padding: 22px 60px; gap: 36px; }
+            .pathways { padding: 100px 60px; }
+            .pathways h2 { font-size: 40px; margin-bottom: 56px; }
+            .immersive-text { padding: 80px 64px; }
+            .immersive-text h2 { font-size: 36px; }
+            .immersive-text p { font-size: 19px; }
+            .pillars { padding: 100px 60px; }
+            .pillars h2 { font-size: 40px; margin-bottom: 56px; }
+            .impact-section { padding: 100px 60px; }
+            .impact-section h2 { font-size: 40px; }
+            .more-stories { padding: 100px 60px; }
+            .more-stories h2 { font-size: 36px; margin-bottom: 48px; }
+            .final-cta { padding: 120px 60px; }
+            .final-cta h2 { font-size: 44px; }
+            .final-cta p { font-size: 19px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- NAV -->
-    <nav>
-        <div class="logo"><img src="logo.png" alt="Communities for Nature"></div>
-        <div class="nav-links">
-            <a href="#">About Us</a>
-            <a href="#">Work &amp; Impact</a>
-            <a href="#">Get Involved</a>
-            <a href="#">Stories &amp; Insights</a>
-            <a href="#" class="btn btn-donate">Donate</a>
-        </div>
-    </nav>
+<nav>
+    <div class="nav-logo"><a href="index.html"><img src="assets/logo.png" alt="Communities for Nature"></a></div>
+    <div class="nav-links">
+        <a href="about.html">About Us</a>
+        <a href="work-and-impact.html">Work &amp; Impact</a>
+        <a href="get-involved.html">Get Involved</a>
+        <a href="stories.html">Stories</a>
+        <a href="donate.html" class="nav-cta">Donate</a>
+    </div>
+    <button class="nav-hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
 
-    <!-- HERO -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>
-                Partnerships<br>that work.
-                <em>Stewardship that lasts.</em>
-            </h1>
-            <p>Communities for Nature delivers community-led conservation through carefully curated partnerships that protect ecosystems and strengthen livelihoods.</p>
-            <div class="hero-buttons">
-                <a href="#" class="btn btn-primary">Partner With Us</a>
-                <a href="#" class="btn btn-ghost">Explore Our Work</a>
-            </div>
-        </div>
-    </section>
+<div id="mobileMenu" class="nav-mobile-overlay">
+    <button class="nav-mobile-close" onclick="this.parentElement.classList.remove('open')">&times;</button>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="work-and-impact.html">Work &amp; Impact</a>
+    <a href="get-involved.html">Get Involved</a>
+    <a href="stories.html">Stories</a>
+    <a href="contact.html">Contact</a>
+    <a href="donate.html" class="nav-cta">Donate</a>
+</div>
 
-    <!-- TICKER -->
-    <div class="ticker">
-        <div class="ticker-track">
-            <span>Communities Leading Change</span>
-            <span>Nature &amp; People</span>
-            <span>Stewardship That Lasts</span>
-            <span>Science-Led Conservation</span>
-            <span>Curated Partnerships</span>
-            <span>Communities Leading Change</span>
-            <span>Nature &amp; People</span>
-            <span>Stewardship That Lasts</span>
-            <span>Science-Led Conservation</span>
-            <span>Curated Partnerships</span>
+<!-- HERO -->
+<section class="hero">
+    <video class="hero-video" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=1920&q=80&auto=format&fit=crop">
+        <source src="assets/hero-ocean.mp4" type="video/mp4">
+        <source src="https://videos.pexels.com/video-files/2169880/2169880-hd_1920_1080_30fps.mp4" type="video/mp4">
+    </video>
+    <div class="hero-content">
+        <h1>Your actions today create <span class="highlight">lasting impact</span> for nature and communities</h1>
+        <p>Community-led conservation through trusted partnerships across Asia, Africa and beyond.</p>
+        <div class="hero-actions">
+            <a href="work-and-impact.html" class="btn btn-primary">Explore Our Work</a>
+            <a href="stories.html" class="btn btn-outline">Our Stories</a>
         </div>
     </div>
+</section>
 
-    <!-- STATS -->
-    <div class="stats-band">
-        <div class="stats-intro">
-            <h2>A record of <span class="highlight">real</span> results.</h2>
-            <p>Over a decade of community-led conservation, delivering measurable impact for nature and the people who depend on it.</p>
-        </div>
-        <div class="stat-item">
-            <h3>3+</h3>
-            <p>Continents</p>
-        </div>
-        <div class="stat-item">
-            <h3>30+</h3>
-            <p>Community Partners</p>
-        </div>
-        <div class="stat-item">
-            <h3>50,000+</h3>
-            <p>Lives Impacted</p>
-        </div>
+<!-- STATEMENT BAR -->
+<div class="statement">
+    <span>Community-Led</span><span class="dot">◆</span>
+    <span>Science-Grounded</span><span class="dot">◆</span>
+    <span>Partnership-Driven</span><span class="dot">◆</span>
+    <span>Long-Term by Design</span>
+</div>
+
+<!-- PATHWAYS -->
+<section class="pathways">
+    <h2>How would you like to <span class="highlight">engage?</span></h2>
+    <div class="pathways-grid">
+        <a href="get-involved.html#partner" class="pw-card">
+            <img src="AI_images/brand_collage.jpeg" alt="Corporate partnership">
+            <div class="pw-card-content">
+                <h3>For Corporates &amp; Strategic Partners</h3>
+                <p>Deliver high-impact ESG outcomes through trusted partners.</p>
+                <span class="pw-link">Partner With Us →</span>
+            </div>
+        </a>
+        <a href="get-involved.html#work" class="pw-card">
+            <img src="AI_images/tropical_learning_circle_community.jpeg" alt="Community delivery">
+            <div class="pw-card-content">
+                <h3>For Community Partners</h3>
+                <p>Collaborate on community-led conservation programmes.</p>
+                <span class="pw-link">Work With Us →</span>
+            </div>
+        </a>
+        <a href="donate.html" class="pw-card">
+            <img src="AI_images/Tropical_children_walking_along_trail.png" alt="Individual supporters">
+            <div class="pw-card-content">
+                <h3>For Supporters &amp; Donors</h3>
+                <p>Stay informed, be inspired and support conservation.</p>
+                <span class="pw-link">Explore &amp; Engage →</span>
+            </div>
+        </a>
     </div>
+</section>
 
-    <!-- STORY CARDS -->
-    <section class="stories-section">
-        <span class="section-label">From the Field</span>
-        <h2>Where community meets <span class="highlight">conservation</span></h2>
-        <div class="stories-grid">
-            <div class="story-card">
-                <div class="story-card-bg card-bg-1"></div>
-                <div class="story-card-content">
-                    <span class="story-tag">Ecosystem Restoration</span>
-                    <h3>Mangroves, livelihoods and the communities that protect both</h3>
-                    <p>In coastal East Africa, community stewards are restoring mangrove systems — and securing the fisheries that feed their families.</p>
-                </div>
-            </div>
-            <div class="story-card">
-                <div class="story-card-bg card-bg-2"></div>
-                <div class="story-card-content">
-                    <span class="story-tag">Marine Conservation</span>
-                    <h3>Reef guardians: how local knowledge is saving coral systems</h3>
-                    <p>Community-led monitoring programmes are outperforming centralised approaches — and the science backs it up.</p>
-                </div>
-            </div>
-            <div class="story-card">
-                <div class="story-card-bg card-bg-3"></div>
-                <div class="story-card-content">
-                    <span class="story-tag">Youth &amp; Education</span>
-                    <h3>The next generation of conservation leaders is already here</h3>
-                    <p>We invest in young people from the communities we work with — building the leadership that conservation needs most.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- IMMERSIVE STORY -->
+<section class="immersive">
+    <div class="immersive-img">
+        <img src="AI_images/Mangroves_above_below_water.png" alt="MITHI mangroves">
+    </div>
+    <div class="immersive-text">
+        <span class="tag">Featured Story</span>
+        <h2>Project MITHI — Investing in People, Restoring Mangroves</h2>
+        <p>Coastal communities stand at the frontline of the climate crisis. MITHI restores degraded coastal areas while ensuring local communities shape and benefit from conservation efforts.</p>
+        <a href="story-mithi.html" class="btn btn-primary">Read the Full Story</a>
+    </div>
+</section>
 
-    <!-- QUOTE BAND -->
-    <section class="quote-band">
-        <blockquote>Nature doesn't need saving from outside — it needs stewards from within. That's what Communities for Nature makes possible.</blockquote>
-        <p class="quote-attribution">Communities for Nature — Our Founding Principle</p>
-    </section>
-
-    <!-- PILLARS -->
-    <section class="pillars-section">
-        <span class="section-label">What We Do</span>
-        <div class="pillars-header">
-            <h2>A platform for <span class="highlight">lasting conservation</span></h2>
-        </div>
-        <div class="pillars-grid">
-            <div class="pillar">
-                <div class="pillar-icon">🤝</div>
+<!-- PILLARS -->
+<section class="pillars">
+    <div class="pillars-inner">
+        <h2>A platform for <span class="highlight">lasting</span> conservation</h2>
+        <div class="pillars-row">
+            <div class="pillar-item">
+                <div class="icon">🤝</div>
                 <h3>Partnerships that deliver</h3>
-                <p>We bring together communities, NGOs, scientists, and funders to co-design long-term programmes with shared goals and genuine accountability.</p>
-                <a href="#" class="pillar-link">Learn more</a>
+                <p>Communities, NGOs, scientists, corporates and funders co-designing long-term programmes with shared goals and measurable outcomes.</p>
             </div>
-            <div class="pillar">
-                <div class="pillar-icon">🌿</div>
-                <h3>Protecting and restoring ecosystems</h3>
-                <p>From mangrove regeneration to coral reef monitoring, we support locally led conservation grounded in science and traditional knowledge.</p>
-                <a href="#" class="pillar-link">Learn more</a>
+            <div class="pillar-item">
+                <div class="icon">🌊</div>
+                <h3>Protecting ecosystems</h3>
+                <p>Mangrove regeneration, coral reef monitoring, forest restoration, species protection — locally led, scientifically grounded.</p>
             </div>
-            <div class="pillar">
-                <div class="pillar-icon">🌱</div>
+            <div class="pillar-item">
+                <div class="icon">🌱</div>
                 <h3>Strengthening communities</h3>
-                <p>We invest in leadership, education, and youth engagement to ensure the resilience and long-term stewardship that conservation demands.</p>
-                <a href="#" class="pillar-link">Learn more</a>
+                <p>Leadership, education, youth engagement and enterprise development for real economic resilience and stewardship.</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- CTA BAND -->
-    <section class="cta-band">
-        <h2>Ready to build a partnership <span style="font-style:italic;">that works?</span></h2>
-        <a href="#" class="btn btn-white">Get in touch</a>
-    </section>
+<!-- IMPACT -->
+<section class="impact-section">
+    <h2>Impact designed to <span class="highlight">endure</span></h2>
+    <p>Healthy ecosystems, capable leadership, resilient livelihoods, trusted partnerships — built to outlast funding cycles.</p>
+    <div class="impact-row">
+        <div class="impact-card"><h3>3+</h3><p>Continents</p></div>
+        <div class="impact-card"><h3>30+</h3><p>Community Partners</p></div>
+        <div class="impact-card"><h3>1000s</h3><p>Members Engaged</p></div>
+        <div class="impact-card"><h3>5+</h3><p>Habitats Restored</p></div>
+        <div class="impact-card"><h3>100+</h3><p>Youth Leaders</p></div>
+    </div>
+</section>
 
-    <!-- FOOTER -->
-    <footer>
-        <div class="footer-top">
-            <div class="footer-col footer-logo">
-                <img src="logo.png" alt="Communities for Nature">
-                <p>Enabling communities to lead environmental stewardship while strengthening livelihoods, education, and resilience.</p>
+<!-- MORE STORIES -->
+<section class="more-stories">
+    <h2>From the <span class="highlight">field</span></h2>
+    <div class="story-strip">
+        <a href="story-mithi.html" class="story-item">
+            <div class="story-item-img"><img src="AI_images/Mangroves_above_below_water.png" alt="MITHI"></div>
+            <div class="story-item-body">
+                <span class="tag">Programme Highlight</span>
+                <h3>Project MITHI — Investing in People, Restoring Mangroves</h3>
+                <p class="meta">MAY 04 2026 · 5 MIN</p>
             </div>
-            <div class="footer-col">
-                <h5>About</h5>
-                <ul>
-                    <li><a href="#">Our Mission</a></li>
-                    <li><a href="#">Governance</a></li>
-                    <li><a href="#">Annual Reports</a></li>
-                    <li><a href="#">Our Team</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h5>Work</h5>
-                <ul>
-                    <li><a href="#">Programmes</a></li>
-                    <li><a href="#">Impact</a></li>
-                    <li><a href="#">Where We Work</a></li>
-                    <li><a href="#">Stories</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h5>Get Involved</h5>
-                <ul>
-                    <li><a href="#">Partner With Us</a></li>
-                    <li><a href="#">Work With Us</a></li>
-                    <li><a href="#">Donate</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
+        </a>
+        <div class="story-item">
+            <div class="story-item-img"><img src="AI_images/sea_turtle_underwater.jpeg" alt="Oceans"></div>
+            <div class="story-item-body">
+                <span class="tag">Insights</span>
+                <h3>From Shoreline to Boardroom — Why Clean Oceans Matter</h3>
+                <p class="meta">MAY 04 2026 · 5 MIN</p>
             </div>
         </div>
-        <div class="footer-bottom">
-            <span>© 2026 Communities for Nature. All rights reserved.</span>
-            <span>Privacy Notice &nbsp;·&nbsp; Terms of Use</span>
+        <div class="story-item">
+            <div class="story-item-img"><img src="AI_images/tropical_learning_circle_community.jpeg" alt="Women in conservation"></div>
+            <div class="story-item-body">
+                <span class="tag">Community Story</span>
+                <h3>Women. Land. Power — A Conservation Story Changing the Game</h3>
+                <p class="meta">MAY 04 2026 · 5 MIN</p>
+            </div>
         </div>
-    </footer>
+    </div>
+</section>
 
+<!-- FINAL CTA -->
+<section class="final-cta">
+    <div class="final-cta-inner">
+        <h2>Ready to build something <span class="highlight">lasting?</span></h2>
+        <p>Whether you're a corporate seeking credible ESG impact, a community organisation ready to partner, or a funder looking for proven delivery — we'd love to hear from you.</p>
+        <a href="contact.html" class="btn btn-primary">Start a Conversation</a>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-grid">
+        <div class="footer-about">
+            <strong class="footer-brand">COMMUNITIES FOR NATURE</strong>
+            <p>Enabling communities to lead environmental stewardship while strengthening livelihoods, education and long-term resilience.</p>
+        </div>
+        <div class="footer-col">
+            <h5>About</h5>
+            <ul>
+                <li><a href="about.html">About Communities for Nature</a></li>
+                <li><a href="about.html">Our Mission &amp; Model</a></li>
+                <li><a href="about.html">Governance &amp; Trustees</a></li>
+                <li><a href="#">Reports &amp; Policies</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h5>Work &amp; Impact</h5>
+            <ul>
+                <li><a href="work-and-impact.html">Explore Our Work</a></li>
+                <li><a href="programmes.html">Programmes</a></li>
+                <li><a href="work-and-impact.html#impact">Impact</a></li>
+                <li><a href="stories.html">Stories &amp; Insights</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h5>Get Involved</h5>
+            <ul>
+                <li><a href="get-involved.html">Partner with Us</a></li>
+                <li><a href="get-involved.html#work">Work with Us</a></li>
+                <li><a href="#">Subscribe to Newsletter</a></li>
+                <li><a href="donate.html">Donate / Support</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>© 2026 Communities for Nature. U.K. Charity (registration number 1204810). All Rights Reserved.</span>
+        <span>Privacy Policy · Terms of Use · Cookie Policy · Accessibility Statement</span>
+    </div>
+</footer>
+
+<script>
+    window.addEventListener('scroll', () => {
+        document.querySelector('nav').classList.toggle('scrolled', window.scrollY > 60);
+    });
+</script>
 </body>
 </html>
 

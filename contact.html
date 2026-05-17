@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact — Communities for Nature</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Square+Peg&family=Nunito:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+    <div class="nav-logo"><a href="index.html"><img src="assets/logo.png" alt="Communities for Nature"></a></div>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="work-and-impact.html">Work &amp; Impact</a>
+        <a href="get-involved.html">Get Involved</a>
+        <a href="stories.html">Stories</a>
+        <a href="donate.html" class="nav-cta">Donate</a>
+    </div>
+    <button class="nav-hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<div id="mobileMenu" class="nav-mobile-overlay">
+    <button class="nav-mobile-close" onclick="this.parentElement.classList.remove('open')">&times;</button>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="work-and-impact.html">Work &amp; Impact</a>
+    <a href="get-involved.html">Get Involved</a>
+    <a href="stories.html">Stories</a>
+    <a href="contact.html">Contact</a>
+    <a href="donate.html" class="nav-cta">Donate</a>
+</div>
+
+<section class="page-hero" style="background-image: url('AI_images/brand_collage_2.jpeg');">
+    <div class="page-hero-content">
+        <span class="section-label">Contact</span>
+        <h1>Let's <span class="highlight">talk</span></h1>
+        <p>Whether you're a potential partner, community organisation, or curious supporter — we'd love to hear from you.</p>
+    </div>
+</section>
+
+<section class="content-section">
+    <div class="content-narrow">
+        <p class="text-body mb-md">Email us at <a href="mailto:info@communitiesfornature.org" class="link-teal">info@communitiesfornature.org</a> or send a message below.</p>
+
+        <form>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" placeholder="Your full name">
+                </div>
+                <div class="form-group">
+                    <label>Organisation</label>
+                    <input type="text" placeholder="Optional">
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" placeholder="you@example.com">
+                </div>
+                <div class="form-group">
+                    <label>Contact Number</label>
+                    <input type="tel" placeholder="+44 ...">
+                </div>
+                <div class="form-group full-width">
+                    <label>Subject</label>
+                    <input type="text" placeholder="What is this regarding?">
+                </div>
+                <div class="form-group full-width">
+                    <label>Message</label>
+                    <textarea placeholder="Tell us more..."></textarea>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary mt-md">Submit</button>
+        </form>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-grid">
+        <div class="footer-about"><strong class="footer-brand">COMMUNITIES FOR NATURE</strong><p>Enabling communities to lead environmental stewardship while strengthening livelihoods, education and long-term resilience.</p></div>
+        <div class="footer-col"><h5>About</h5><ul><li><a href="about.html">About</a></li><li><a href="about.html">Our Mission &amp; Model</a></li><li><a href="about.html">Governance &amp; Trustees</a></li></ul></div>
+        <div class="footer-col"><h5>Work &amp; Impact</h5><ul><li><a href="work-and-impact.html">Explore Our Work</a></li><li><a href="programmes.html">Programmes</a></li><li><a href="stories.html">Stories &amp; Insights</a></li></ul></div>
+        <div class="footer-col"><h5>Get Involved</h5><ul><li><a href="get-involved.html">Partner with Us</a></li><li><a href="get-involved.html#work">Work with Us</a></li><li><a href="donate.html">Donate</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Communities for Nature. U.K. Charity (registration number 1204810). All Rights Reserved.</span><span>Privacy Policy · Terms of Use · Cookie Policy</span></div>
+</footer>
+<script>window.addEventListener('scroll',()=>{document.querySelector('nav').classList.toggle('scrolled',window.scrollY>60);});</script>
+</body>
+</html>
+

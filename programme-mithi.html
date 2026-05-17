@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project MITHI — Communities for Nature</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Square+Peg&family=Nunito:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+    <div class="nav-logo"><a href="index.html"><img src="assets/logo.png" alt="Communities for Nature"></a></div>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="work-and-impact.html" class="active">Work &amp; Impact</a>
+        <a href="get-involved.html">Get Involved</a>
+        <a href="stories.html">Stories</a>
+        <a href="donate.html" class="nav-cta">Donate</a>
+    </div>
+    <button class="nav-hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<div id="mobileMenu" class="nav-mobile-overlay">
+    <button class="nav-mobile-close" onclick="this.parentElement.classList.remove('open')">&times;</button>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="work-and-impact.html">Work &amp; Impact</a>
+    <a href="get-involved.html">Get Involved</a>
+    <a href="stories.html">Stories</a>
+    <a href="contact.html">Contact</a>
+    <a href="donate.html" class="nav-cta">Donate</a>
+</div>
+
+<section class="page-hero" style="background-image: url('AI_images/Mangroves_above_below_water.png');">
+    <div class="page-hero-content">
+        <span class="section-label">Active Programme · Philippines</span>
+        <h1>Project <span class="highlight">MITHI</span></h1>
+        <p>Mangrove Restoration &amp; Livelihoods — investing in people, restoring coastlines.</p>
+    </div>
+</section>
+
+<section class="content-section">
+    <div class="content-narrow text-center">
+        <p class="lead">Mangroves absorb four times more carbon than tropical rainforests — and they're disappearing. MITHI restores them, with communities at the centre.</p>
+    </div>
+</section>
+
+<!-- SPLIT: WHY MANGROVES -->
+<div class="split-feature bg-off-white">
+    <div class="split-feature-img" style="background-image: url('AI_images/Mangroves_above_below_water.png');"></div>
+    <div class="split-feature-text">
+        <span class="section-label">Why Mangroves</span>
+        <h2>Nature's most powerful <span class="highlight">climate</span> solution</h2>
+        <p>Mangroves shield coastlines from storm surges, host critical marine life, and lock up centuries of carbon. When they're cleared, that carbon escapes — and the communities depending on them lose everything.</p>
+        <p>MITHI is restoring degraded coastal areas in Aringay, Bauang and Bais, with Oceanus Conservation, Security Bank and local stakeholders.</p>
+    </div>
+</div>
+
+<!-- ARTICLE / VOICES -->
+<section class="content-section">
+    <div class="article-content">
+        <span class="section-label">Community-Led Approach</span>
+        <h2>Beyond restoration</h2>
+        <p>Launched with conservation leaders including Nikki Lizares (Security Bank), Rhoda Phillips (CfN), Camille Rivera (Oceanus), local mangrove champion Delailah Lacadue and Engr. Rhea Tudado from Aringay's local government.</p>
+
+        <blockquote>
+            <p>MITHI is more than just an environmental program. It's a collaborative effort to position communities as key conservation leaders, strengthening their role in habitat restoration, ecotourism, and sustainable livelihoods.</p>
+            <footer>— Nikki Lizares, Security Bank</footer>
+        </blockquote>
+
+        <p>As CfN Trustee Sef Carandang put it: "We need to invest in knowing the communities."</p>
+        <p>Security Bank CFO Eduardo Olbes added: "It's only through us touching the ground and working side by side with individuals within the local community that our understanding will develop."</p>
+    </div>
+</section>
+
+<!-- FEATURE: JOIN -->
+<div class="feature-image-block" style="background-image: url('AI_images/Tropical_children_walking_along_trail.png');">
+    <div class="feature-content">
+        <h2>Join us. Fund the <span class="highlight">future.</span></h2>
+        <p>With continued support, coastal communities can reclaim their landscapes, drive lasting change, and lead the fight against climate threats.</p>
+        <div class="btn-group">
+            <a href="get-involved.html" class="btn btn-primary">Partner With Us</a>
+            <a href="contact.html" class="btn btn-outline">Contact MITHI Team</a>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-grid">
+        <div class="footer-about"><strong class="footer-brand">COMMUNITIES FOR NATURE</strong><p>Enabling communities to lead environmental stewardship while strengthening livelihoods, education and long-term resilience.</p></div>
+        <div class="footer-col"><h5>About</h5><ul><li><a href="about.html">About</a></li><li><a href="about.html">Our Mission &amp; Model</a></li><li><a href="about.html">Governance &amp; Trustees</a></li></ul></div>
+        <div class="footer-col"><h5>Work &amp; Impact</h5><ul><li><a href="work-and-impact.html">Explore Our Work</a></li><li><a href="programmes.html">Programmes</a></li><li><a href="stories.html">Stories &amp; Insights</a></li></ul></div>
+        <div class="footer-col"><h5>Get Involved</h5><ul><li><a href="get-involved.html">Partner with Us</a></li><li><a href="get-involved.html#work">Work with Us</a></li><li><a href="donate.html">Donate</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Communities for Nature. U.K. Charity (registration number 1204810). All Rights Reserved.</span><span>Privacy Policy · Terms of Use · Cookie Policy</span></div>
+</footer>
+<script>window.addEventListener('scroll',()=>{document.querySelector('nav').classList.toggle('scrolled',window.scrollY>60);});</script>
+</body>
+</html>
+
